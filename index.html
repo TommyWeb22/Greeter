@@ -73,25 +73,44 @@
         </div>
         <div>
         <table class = "styled-table">
-            <thead><tr><th>Greeting Form</th></tr></thead>
+            <thead><tr><th colspan = 2>Interact with Contract</th></tr></thead>
             <tbody><tr><td>
             <form>
                 <p>Please enter a new greeting below:</p>
                 <input type = "text" placeholder = "enter new greeting" id = "newgreeting" />
             </form>
-            </td></tr>
-            <tr><td>Send to contract</td></tr>
-            <tr><td>Withdraw from contract</td></tr>
-            </tbody>
-            <tfoot>
-                <th>
-                <button type = "button"
+            </td>
+            <td><button type = "button"
                 onclick = "newGreeting()"
                 class = "navbutton">
                 SUBMIT
-                </button>
-                </th>
-            </tfoot>
+                </button></td>
+            </tr>
+            <tr><td>
+                <form>
+                    <p>Send token to contract:</p>
+                    <input type = "text" placeholder = "enter amount in ETH" id = "sendToken" />
+                </form>
+            </td>
+            <td><button type = "button"
+                onclick = "sendToken()"
+                class = "navbutton">
+                SUBMIT
+                </button></td>
+            </tr>
+            <tr><td>
+                <form>
+                    <p>Withdraw token from contract:</p>
+                    <input type = "text" placeholder = "enter amount in ETH" id = "sendToken" />
+                </form>
+            </td>
+            <td><button type = "button"
+                onclick = "withdrawToken()"
+                class = "navbutton">
+                SUBMIT
+                </button></td>
+            </tr>
+            </tbody>
         </table>
         </div>
         </div>

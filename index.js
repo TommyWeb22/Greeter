@@ -67,6 +67,7 @@ async function setUpContract () {
         console.log('Event GreeterEvent received: event obj is ', event);
     });
 
+    document.getElementById("cAddress").innerText = contractAddress;
 }
 
 async function getContractInfo () {
@@ -79,10 +80,9 @@ async function getContractInfo () {
     const balance = await contract.getBalance();
     console.log(balance);
 
-    document.getElementById("cAddress").innerText = contractAddress;
     document.getElementById("cOwner").innerText = owner;
     document.getElementById("cGreeting").innerText = greeting;
-    document.getElementById("cBalance").innerText = balance;
+    document.getElementById("cBalance").innerText =  `${(+ethers.utils.formatEther(balance)).toFixed(4)} ETH`;
 }
 
 async function newGreeting () {
@@ -95,5 +95,35 @@ async function newGreeting () {
         alert('Setting new greeting failed');
     } else {
         console.log(`Greeting succeesfully updated to ${g}`)
+    }
+}
+
+async function sendToken () {
+    let e = document.getElementById('sendToken').value
+    console.log(`Sending to ${e} ETH to contract...`);
+
+    transaction = {
+        to: contractAddress,
+        value: ethers.utils.parseEther(e, 'ether')
+    };
+    const tx = await signer.sendTransaction(transaction);
+
+    const txReceipt = await tx.wait();
+    if (txReceipt.status !== 1) {
+        alert('Send token failed');
+    } else {
+        console.log(`${t} oken successfully sent`)
+    }
+}
+
+async function withdrawToken () {
+    console.log(`Withdrawing balance from contract...`);
+
+    const tx = await contract.withdraw();
+    const txReceipt = await tx.wait();
+    if (txReceipt.status !== 1) {
+        alert('Withdraw balance failed');
+    } else {
+        console.log(`Balance succeesfully withdrawn`)
     }
 }
