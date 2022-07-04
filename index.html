@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Greeter</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+
+        <!-- Importing ethers.js -->
+       <script
+            src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+            type="application/javascript">
+        </script>
+
+        <script
+            src="./index.js"
+            type = "application/javascript">
+        </script>
+
+        <nav>
+            <div class = "left">
+            Greeter DApp
+            </div>
+            <div class = "right">
+            <span style = 'color:yellow'>Wallet: &nbsp;&nbsp;</span> <span id = "wallet">
+                <button name = "button" type = "button" 
+                    onclick = "connectWallet()"
+                    class = "navbutton">
+                    Connect
+                </button>
+            </span>
+            </div>
+        </nav>
+
+        <div class = "flexcontainer">
+        <div>
+        <table class = "styled-table">
+            <thead>
+                <tr>
+                    <th colspan = 2>Contract Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Address</td>
+                    <td id = "cAddress" width = 400px class = "address">6000</td>
+                </tr>
+                <tr>
+                    <th>Owner</td>
+                    <td id = "cOwner" class = "address">Not Fetched</td>
+                </tr>
+                <tr>
+                    <th>Greeting</td>
+                    <td id = "cGreeting">Not Fetched</td>
+                </tr>
+                <tr>
+                    <th>Balance</td>
+                    <td id = "cBalance">Not Fetched</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan = 2>
+                        <button name = "button" type = "button" 
+                        onclick = "getContractInfo()"
+                        class = "navbutton">
+                        REFRESH
+                        </button>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+        </div>
+        <div>
+        <table class = "styled-table">
+            <thead><th>Greeting Form</th></thead>
+            <tbody><td>
+            <form>
+                <p>Please enter a new greeting below:</p>
+                <input type = "text" placeholder = "enter new greeting" id = "newgreeting" />
+            </form>
+            </td>
+            </tbody>
+            <tfoot>
+                <th>
+                <button type = "button"
+                onclick = "newGreeting()"
+                class = "navbutton">
+                SUBMIT
+                </button>
+                </th>
+            </tfoot>
+        </table>
+        </div>
+        </div>
+        
+    </body>
+    </html>

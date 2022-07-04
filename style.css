@@ -1,0 +1,78 @@
+
+body {
+    background-color: powderblue;
+    padding: 0px;
+}
+
+.address {
+    font-size: large;
+    font-family:monospace;
+}
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    overflow: auto;
+    height: auto;
+    color: white;
+    font-size: 2rem;
+    padding-bottom: 5px;
+ }
+ .left {
+    margin-left: 10px;
+    margin-right: 50px;
+    /* flex: 1 1 auto; */
+ }
+ .right {
+    font-size: 1rem;
+    margin-right: 80px;
+ }
+ .navbutton {
+    padding: 5px;
+    background-color: purple;
+    color: white;
+ }
+
+ .styled-table {
+    border-collapse: collapse;
+    background-color: white;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+thead, tfoot {
+    background-color: black;
+    color: white;
+    font-size: 1.6rem;
+    padding: 10px;
+}
+th, td {
+    padding: 5px;
+}
+tbody th {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+tbody tr:nth-child(even) {
+    background-color: #eee;
+  }
+
+.flexcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/*
+input[type=button] {
+    border: 1px solid #333333;
+    background-color: #333333;
+    color: #fff;
+    cursor: pointer;
+}
+*/
